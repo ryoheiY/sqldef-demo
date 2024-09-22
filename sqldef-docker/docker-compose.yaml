@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  sqldef:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./sql:/sql  # ローカルのsqlディレクトリをコンテナの/sqlにマウント
+    entrypoint: tail -f /dev/null

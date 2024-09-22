@@ -1,0 +1,5 @@
+docker run --rm pgsqldef-image 
+
+psqldef --host=host.docker.internal --port=5434 --user=postgres --password=postgres sample_db < /sql/schema.sql
+
+psqldef --dry-run --host=host.docker.internal --port=5434 --user=postgres --password=postgres sample_db < /sql/schema.sql > /sql/sqldef-output.sql
